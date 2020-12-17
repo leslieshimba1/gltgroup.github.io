@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en"> <!--javascript done by Tom-->
+  <head>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="utf-8">
+    <title>JS minigame</title>
+    <script>
+      function game(){
+        player1 = prompt("Enter your name player one.", "Enter Here");
+        player1 = alert("Hello, " +player1);
+
+        for (var i = 0; i < 3; i++) {
+          var player1;
+          var score = [0, 0];
+          var msge;
+          var topics = ["History", "Movies&TV", "Sports"]
+          var historyQ = ["Who was the first man to walk on the moon?", "Who wrote hamlet?", "What country was cleopatra from?"]
+          var moviestvQ = ["who plays jake peralta in brooklyn nine-nine?", "who directed the movie Avatar?", "who voices shrek?"]
+          var sportsQ = [" which country was the first to win the world cup?", "which nfl player has the most super bowl rings at six?", "which county has the most all ireland hurling titles?"]
+
+
+          var t1 = prompt("  Enter go if you want to recieve a topic", "Enter Here");
+
+          if(t1 === "go"){
+            topics = topics[Math.floor(Math.random() * topics.length)];
+            msge = alert("your topic is, " +topics);
+          }
+          if(topics === "History"){
+            historyQ = historyQ[Math.floor(Math.random() * historyQ.length)];
+            msge = prompt(historyQ);
+
+            if (historyQ === "Who was the first man to walk on the moon?"){
+              if (msge === "neil armstrong") {
+                alert("Correct!");
+                score[1]++;
+              }else {
+                alert("incorrect :(");
+              }
+            }else if (historyQ === "Who wrote hamlet?") {
+            if (msge === "shakespeare") {
+              alert("Correct!");
+              score[1]++;
+            }else {
+              alert("incorrect :(");
+            }
+          }else if (historyQ === "What country was cleopatra from?"){
+            if (msge === "egypt") {
+              alert("Correct!");
+              score[1]++;
+            }else {
+              alert("incorrect :(");
+            }
+          }
+        }else if(topics === "Movies&TV"){
+          moviestvQ = moviestvQ[Math.floor(Math.random() * moviestvQ.length)];
+          msge = prompt(moviestvQ);
+          if (moviestvQ === "who plays jake peralta in brooklyn nine-nine?"){
+            if (msge === "andy samberg") {
+              alert("Correct!");
+              score[1]++;
+            }else {
+              alert("incorrect :(");
+            }
+          }else if (moviestvQ === "who directed the movie Avatar?"){
+            if (msge === "james cameron") {
+              alert("Correct!");
+              score[1]++;
+            }else {
+              alert("incorrect :(");
+            }
+          }if (moviestvQ === "who voices shrek?"){
+            if (msge === "mike myers") {
+              alert("Correct!");
+              score[1]++;
+            }else {
+              alert("incorrect :(");
+            }
+          }
+        }else if(topics === "Sports"){
+          sportsQ = sportsQ[Math.floor(Math.random() * sportsQ.length)];
+          msge = prompt(sportsQ);
+          if (sportsQ === "which country was the first to win the world cup?"){
+            if (msge === "uraguay") {
+              alert("Correct!");
+              score[1]++;
+            }else {
+              alert("incorrect :(");
+            }
+          }else if (sportsQ === "which nfl player has the most super bowl rings at six?"){
+            if (msge === "tom brady") {
+              alert("Correct!");
+              score[1]++;
+            }else {
+              alert("incorrect :(");
+            }
+          }else if (sportsQ === "which county has the most all ireland hurling titles?"){
+            if (msge === "kilkenny") {
+              alert("Correct!");
+              score[1]++;
+            }else {
+              alert("incorrect :(");
+            }
+          }
+        }
+
+      }
+      document.write("Thanks for playing your score is " +score[1]);
+
+    }
+    function change(){
+      document.getElementById("head").innerHTML = "just to pass the time";
+      document.getElementById("colorchange").style.color = "#f55742";
+      var img = document.createElement("img");
+      img.src = "images/player1.png";
+      document.getElementById("body").appendChild(img);
+
+
+    }
+    function normal() {
+      document.getElementById("head").innerHTML = "let's play!!!!";
+      document.getElementById("colorchange").style.color = "blue";
+
+
+    }
+
+    </script>
+  </head>
+  <body id="body">
+
+    <h1 id="head" onmouseover="change()" onmouseout="normal()">QUIZ GAME</h1>
+    <input id="colorchange" onmouseover="change()" type="button" value="play game" onclick="game()">
+    <nav class="menu">
+      <a href="index.html">Home</a>
+      <a href="about.html">About us</a>
+      <a href="contact.html">Bookings</a>
+      <a href="minigame.html">minigame</a>
+    </div>
+
+
+    </nav>
+    <p id="pic" onmouseover="change()" onmouseout="normal()"></p>
+
+
+
+
+
+  </body>
+</html>
